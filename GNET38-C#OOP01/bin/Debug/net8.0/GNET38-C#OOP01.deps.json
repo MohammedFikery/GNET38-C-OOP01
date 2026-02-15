@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "GNET38-C#OOP01/1.0.0": {
+        "runtime": {
+          "GNET38-C#OOP01.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "GNET38-C#OOP01/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,0 +1,14 @@
+D:\M_Fikery\Test\GNET38-C#OOP01\GNET38-C#OOP01\bin\Debug\net8.0\GNET38-C#OOP01.exe
+D:\M_Fikery\Test\GNET38-C#OOP01\GNET38-C#OOP01\bin\Debug\net8.0\GNET38-C#OOP01.deps.json
+D:\M_Fikery\Test\GNET38-C#OOP01\GNET38-C#OOP01\bin\Debug\net8.0\GNET38-C#OOP01.runtimeconfig.json
+D:\M_Fikery\Test\GNET38-C#OOP01\GNET38-C#OOP01\bin\Debug\net8.0\GNET38-C#OOP01.dll
+D:\M_Fikery\Test\GNET38-C#OOP01\GNET38-C#OOP01\bin\Debug\net8.0\GNET38-C#OOP01.pdb
+D:\M_Fikery\Test\GNET38-C#OOP01\GNET38-C#OOP01\obj\Debug\net8.0\GNET38-C#OOP01.GeneratedMSBuildEditorConfig.editorconfig
+D:\M_Fikery\Test\GNET38-C#OOP01\GNET38-C#OOP01\obj\Debug\net8.0\GNET38-C#OOP01.AssemblyInfoInputs.cache
+D:\M_Fikery\Test\GNET38-C#OOP01\GNET38-C#OOP01\obj\Debug\net8.0\GNET38-C#OOP01.AssemblyInfo.cs
+D:\M_Fikery\Test\GNET38-C#OOP01\GNET38-C#OOP01\obj\Debug\net8.0\GNET38-C#OOP01.csproj.CoreCompileInputs.cache
+D:\M_Fikery\Test\GNET38-C#OOP01\GNET38-C#OOP01\obj\Debug\net8.0\GNET38-C#OOP01.dll
+D:\M_Fikery\Test\GNET38-C#OOP01\GNET38-C#OOP01\obj\Debug\net8.0\refint\GNET38-C#OOP01.dll
+D:\M_Fikery\Test\GNET38-C#OOP01\GNET38-C#OOP01\obj\Debug\net8.0\GNET38-C#OOP01.pdb
+D:\M_Fikery\Test\GNET38-C#OOP01\GNET38-C#OOP01\obj\Debug\net8.0\GNET38-C#OOP01.genruntimeconfig.cache
+D:\M_Fikery\Test\GNET38-C#OOP01\GNET38-C#OOP01\obj\Debug\net8.0\ref\GNET38-C#OOP01.dll
