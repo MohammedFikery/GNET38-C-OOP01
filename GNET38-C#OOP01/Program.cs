@@ -33,113 +33,77 @@ namespace GNET38_C_OOP01
 
             #region part2
 
-            Console.WriteLine("=== Movie Ticket Booking System ===");
+            Console.WriteLine("========== Ticket Booking ==========\n");
 
-            // Read movie name
-            string movieName = ReadNonEmptyString("Enter Movie Name: ");
+            var cinema = new Cinema();
 
-            // Ask if user wants defaults (movie-only constructor)
-            bool useDefaults = ReadYesNo("Use default ticket (Standard, A1, Price 50)? (y/n): ");
-
-            Ticket ticket;
-
-            if (useDefaults)
+            for (int i = 1; i <= 3; i++)
             {
-                ticket = new Ticket(movieName);
+                Console.WriteLine($"Enter data for Ticket {i}:");
+
+                string movie = ReadNonEmptyString("Movie Name: ");
+                TicketType type = ReadTicketType("Ticket Type (1=Standard, 2=VIP, 3=IMAX): ");
+                char row = ReadSeatRow("Seat Row (A-Z): ");
+                int seatNo = ReadPositiveInt("Seat Number: ");
+                double price = ReadPositiveDouble("Price: ");
+
+                var seat = new SeatLocation(row, seatNo);
+                var ticket = new Ticket(movie, type, seat, price);
+
+                cinema.AddTicket(ticket);
+                Console.WriteLine();
             }
+
+            Console.WriteLine("========== All Tickets ==========\n");
+
+            for (int i = 0; i < 3; i++)
+            {
+                var t = cinema[i];
+                if (t is null) continue;
+
+                Console.WriteLine(
+                    $"Ticket #{t.TicketId} | {t.MovieName} | {t.Type} | Seat: {t.Seat} | " +
+                    $"Price: {t.Price:0.##} EGP | After Tax: {t.PriceAfterTax:0.##} EGP"
+                );
+            }
+
+            Console.WriteLine("\n========== Search by Movie ==========\n");
+            string search = ReadNonEmptyString("Enter movie name to search: ");
+            var found = cinema[search];
+
+            if (found is null)
+                Console.WriteLine("Not found.");
             else
-            {
-                TicketType type = ReadTicketType("Choose Ticket Type: 1=Standard, 2=VIP, 3=IMAX : ");
+                Console.WriteLine(
+                    $"Found Ticket #{found.TicketId} | {found.MovieName} | {found.Type} | Seat: {found.Seat} | " +
+                    $"Price: {found.Price:0.##} EGP"
+                );
 
-                char row = ReadSeatRow("Enter Seat Row (A-Z): ");
-                int number = ReadPositiveInt("Enter Seat Number (>0): ");
+            Console.WriteLine("\n========== Statistics ==========\n");
+            Console.WriteLine($"Total Tickets Sold: {Ticket.GetTotalTicketsSold()}");
 
-                double price = ReadNonNegativeDouble("Enter Base Price: ");
+            Console.WriteLine("\nBooking Reference 1: " + BookingHelper.GenerateBookingReference());
+            Console.WriteLine("Booking Reference 2: " + BookingHelper.GenerateBookingReference());
 
-                ticket = new Ticket(movieName, type, new SeatLocation(row, number), price);
-            }
+            Console.WriteLine("\n========== Group Discount ==========\n");
+            int groupCount = 5;
+            double groupPrice = 80;
+            double discountedTotal = BookingHelper.CalcGroupDiscount(groupCount, groupPrice);
 
-            // Discount
-            double discount = ReadNonNegativeDouble("Enter Discount Amount (0 for none): ");
-            double discountBefore = discount;
-            ticket.ApplyDiscount(ref discount);
+            double originalTotal = groupCount * groupPrice;
+            Console.WriteLine($"Group Discount ({groupCount} tickets x {groupPrice:0.##} EGP): {discountedTotal:0.##} EGP " +
+                              (groupCount >= 5 ? "(10% off applied)" : "(no discount)"));
 
-            // Tax
-            double taxPercent = ReadNonNegativeDouble("Enter Tax Percent (e.g., 14): ");
-            double totalAfterTax = ticket.CalcTotal(taxPercent);
-
-            // Print summary
-            Console.WriteLine();
-            ticket.PrintTicket();
-            Console.WriteLine($"Discount Applied? : {(discount == 0 && discountBefore > 0 ? "YES" : "NO")}");
-            Console.WriteLine($"Tax (%)           : {taxPercent:0.00}");
-            Console.WriteLine($"Total After Tax   : {totalAfterTax:0.00}");
-
-            Console.WriteLine("\nPress any key to exit...");
-            Console.ReadKey(); 
-            #endregion
+            Console.WriteLine("\n====================================");
         }
 
 
-        #region Q1 : Explain with code example how class and struct behave differently
-        /*
-        //class>>>> Reference type>>>>Stored in Heap >>>Copies reference>>>>using with Larg data
-        //struct>>>Value type >>>>>Stored in Stack (usually)>>>>>Copies value...dont support Inheritance >>>>using with Small data
-        class PersonClass
-        {
-            public string Name;
-        }
-
-        struct PersonStruct
-        {
-            public string Name;
-        }
-        */
-        #endregion
-
-        #region Q2 : Explain the difference between public and private access modifiers with an example. 
-
-        //public >>>> ألكل يقدر يشوفها من اي مكان ...>Example Constractor 
-        //private >>> ماحدش يقدر يشوفها خارج السكوب بتاعها وده بنحتاج نعمله لو في خصوصية او تحقق مثلا ....>>>  Encapsulation لتحقيق مبداء ال 
-
-
-        #endregion
-
-        #region Q3 : Describe the steps to create and use a class library in Visual Studio.
-        /*
-         * افتح Visual Studio
-         * اختر Create a new project
-         * ابحث عن:Class Library (.NET)
-         * اكتب الاسم
-         * اختر Framework
-         * Create
-         * الكلاس يجب أن يكون public
-         * اكتب الكود الخاص بك محتاج تستخدمع فيما بعد في اي مشروع
-         * اعمل Build للمشروع
-         * ==============================================================================================
-         * في المشروع الجديد محتاج تعمل استيراد للمكتبة فيه 
-                                * Right Click References
-                                * Add Reference
-                                * اختار الملف الامتداد dll
-                                * OK
-
-         */
-        #endregion
-
-        #region Q4 : What is a class library? Why do we use class libraries?
-        /*
-         * هي كود انت محتاج تكرره في اكثر من مشروع فبنعمله في مكتبة ونحفظه ونستدعيه في اي مشروع 
-         */
-        #endregion
-
-        #region part2
-        static string ReadNonEmptyString(string prompt)
+        private static string ReadNonEmptyString(string prompt)
         {
             while (true)
             {
                 Console.Write(prompt);
                 string? s = Console.ReadLine();
-
                 if (!string.IsNullOrWhiteSpace(s))
                     return s.Trim();
 
@@ -147,80 +111,119 @@ namespace GNET38_C_OOP01
             }
         }
 
-        static bool ReadYesNo(string prompt)
+        private static int ReadPositiveInt(string prompt)
         {
             while (true)
             {
                 Console.Write(prompt);
-                string? s = Console.ReadLine()?.Trim().ToLowerInvariant();
-
-                if (s == "y" || s == "yes") return true;
-                if (s == "n" || s == "no") return false;
-
-                Console.WriteLine("Please enter y/n.");
-            }
-        }
-
-        static TicketType ReadTicketType(string prompt)
-        {
-            while (true)
-            {
-                Console.Write(prompt);
-                string? input = Console.ReadLine();
-
-                if (int.TryParse(input, out int n) && Enum.IsDefined(typeof(TicketType), n))
-                    return (TicketType)n;
-
-                Console.WriteLine("Invalid type. Enter 1, 2, or 3.");
-            }
-        }
-
-        static char ReadSeatRow(string prompt)
-        {
-            while (true)
-            {
-                Console.Write(prompt);
-                string? input = Console.ReadLine();
-
-                if (!string.IsNullOrWhiteSpace(input) && input.Trim().Length == 1)
-                {
-                    char c = char.ToUpperInvariant(input.Trim()[0]);
-                    if (c >= 'A' && c <= 'Z') return c;
-                }
-
-                Console.WriteLine("Invalid row. Enter a letter A-Z.");
-            }
-        }
-
-        static int ReadPositiveInt(string prompt)
-        {
-            while (true)
-            {
-                Console.Write(prompt);
-                string? input = Console.ReadLine();
-
-                if (int.TryParse(input, out int n) && n > 0)
+                if (int.TryParse(Console.ReadLine(), out int n) && n > 0)
                     return n;
 
-                Console.WriteLine("Invalid number. Enter an integer > 0.");
+                Console.WriteLine("Invalid number. Please enter a positive integer.");
             }
         }
 
-        static double ReadNonNegativeDouble(string prompt)
+        private static double ReadPositiveDouble(string prompt)
         {
             while (true)
             {
                 Console.Write(prompt);
-                string? input = Console.ReadLine();
+                if (double.TryParse(Console.ReadLine(), out double d) && d > 0)
+                    return d;
 
-                if (double.TryParse(input, out double v) && v >= 0)
-                    return v;
-
-                Console.WriteLine("Invalid value. Enter a number >= 0.");
+                Console.WriteLine("Invalid number. Please enter a positive value.");
             }
         }
 
-        #endregion
+        private static char ReadSeatRow(string prompt)
+        {
+            while (true)
+            {
+                Console.Write(prompt);
+                string? s = Console.ReadLine();
 
+                if (!string.IsNullOrWhiteSpace(s))
+                {
+                    char c = char.ToUpperInvariant(s.Trim()[0]);
+                    if (c >= 'A' && c <= 'Z')
+                        return c;
+                }
+
+                Console.WriteLine("Invalid row. Please enter a letter A-Z.");
+            }
+        }
+
+        private static TicketType ReadTicketType(string prompt)
+        {
+            while (true)
+            {
+                Console.Write(prompt);
+                if (int.TryParse(Console.ReadLine(), out int n))
+                {
+                    if (n >= 1 && n <= 3)
+                        return (TicketType)n;
+
+                    if (n >= 0 && n <= 2)
+                        return (TicketType)(n + 1);
+                }
+
+                Console.WriteLine("Invalid type. Enter 1 (Standard), 2 (VIP), 3 (IMAX).");
+            }
+        }
+        #endregion
     }
+
+
+    #region Q1 : Explain with code example how class and struct behave differently
+    /*
+    //class>>>> Reference type>>>>Stored in Heap >>>Copies reference>>>>using with Larg data
+    //struct>>>Value type >>>>>Stored in Stack (usually)>>>>>Copies value...dont support Inheritance >>>>using with Small data
+    class PersonClass
+    {
+        public string Name;
+    }
+
+    struct PersonStruct
+    {
+        public string Name;
+    }
+    */
+    #endregion
+
+    #region Q2 : Explain the difference between public and private access modifiers with an example. 
+
+    //public >>>> ألكل يقدر يشوفها من اي مكان ...>Example Constractor 
+    //private >>> ماحدش يقدر يشوفها خارج السكوب بتاعها وده بنحتاج نعمله لو في خصوصية او تحقق مثلا ....>>>  Encapsulation لتحقيق مبداء ال 
+
+
+    #endregion
+
+    #region Q3 : Describe the steps to create and use a class library in Visual Studio.
+    /*
+     * افتح Visual Studio
+     * اختر Create a new project
+     * ابحث عن:Class Library (.NET)
+     * اكتب الاسم
+     * اختر Framework
+     * Create
+     * الكلاس يجب أن يكون public
+     * اكتب الكود الخاص بك محتاج تستخدمع فيما بعد في اي مشروع
+     * اعمل Build للمشروع
+     * ==============================================================================================
+     * في المشروع الجديد محتاج تعمل استيراد للمكتبة فيه 
+                            * Right Click References
+                            * Add Reference
+                            * اختار الملف الامتداد dll
+                            * OK
+
+     */
+    #endregion
+
+    #region Q4 : What is a class library? Why do we use class libraries?
+    /*
+     * هي كود انت محتاج تكرره في اكثر من مشروع فبنعمله في مكتبة ونحفظه ونستدعيه في اي مشروع 
+     */
+    #endregion
+
+
 }

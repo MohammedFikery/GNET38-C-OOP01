@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "D:\\M_Fikery\\Test\\GNET38-C#OOP01\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{2652E91D-4467-4A67-8EEF-4F2B1AA229BD}|GNET38-C#OOP01\\GNET38-C#OOP01.csproj|d:\\m_fikery\\test\\gnet38-c#oop01\\gnet38-c#oop01\\bookinghelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2652E91D-4467-4A67-8EEF-4F2B1AA229BD}|GNET38-C#OOP01\\GNET38-C#OOP01.csproj|solutionrelative:gnet38-c#oop01\\bookinghelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2652E91D-4467-4A67-8EEF-4F2B1AA229BD}|GNET38-C#OOP01\\GNET38-C#OOP01.csproj|d:\\m_fikery\\test\\gnet38-c#oop01\\gnet38-c#oop01\\cinema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2652E91D-4467-4A67-8EEF-4F2B1AA229BD}|GNET38-C#OOP01\\GNET38-C#OOP01.csproj|solutionrelative:gnet38-c#oop01\\cinema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2652E91D-4467-4A67-8EEF-4F2B1AA229BD}|GNET38-C#OOP01\\GNET38-C#OOP01.csproj|d:\\m_fikery\\test\\gnet38-c#oop01\\gnet38-c#oop01\\seatlocation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2652E91D-4467-4A67-8EEF-4F2B1AA229BD}|GNET38-C#OOP01\\GNET38-C#OOP01.csproj|solutionrelative:gnet38-c#oop01\\seatlocation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -31,51 +39,77 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "BookingHelper.cs",
+              "DocumentMoniker": "D:\\M_Fikery\\Test\\GNET38-C#OOP01\\GNET38-C#OOP01\\BookingHelper.cs",
+              "RelativeDocumentMoniker": "GNET38-C#OOP01\\BookingHelper.cs",
+              "ToolTip": "D:\\M_Fikery\\Test\\GNET38-C#OOP01\\GNET38-C#OOP01\\BookingHelper.cs",
+              "RelativeToolTip": "GNET38-C#OOP01\\BookingHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-21T10:17:22.666Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Cinema.cs",
+              "DocumentMoniker": "D:\\M_Fikery\\Test\\GNET38-C#OOP01\\GNET38-C#OOP01\\Cinema.cs",
+              "RelativeDocumentMoniker": "GNET38-C#OOP01\\Cinema.cs",
+              "ToolTip": "D:\\M_Fikery\\Test\\GNET38-C#OOP01\\GNET38-C#OOP01\\Cinema.cs",
+              "RelativeToolTip": "GNET38-C#OOP01\\Cinema.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-21T10:16:49.363Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "SeatLocation.cs",
               "DocumentMoniker": "D:\\M_Fikery\\Test\\GNET38-C#OOP01\\GNET38-C#OOP01\\SeatLocation.cs",
               "RelativeDocumentMoniker": "GNET38-C#OOP01\\SeatLocation.cs",
               "ToolTip": "D:\\M_Fikery\\Test\\GNET38-C#OOP01\\GNET38-C#OOP01\\SeatLocation.cs",
               "RelativeToolTip": "GNET38-C#OOP01\\SeatLocation.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAA+AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-15T08:57:26.805Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Ticket.cs",
               "DocumentMoniker": "D:\\M_Fikery\\Test\\GNET38-C#OOP01\\GNET38-C#OOP01\\Ticket.cs",
               "RelativeDocumentMoniker": "GNET38-C#OOP01\\Ticket.cs",
               "ToolTip": "D:\\M_Fikery\\Test\\GNET38-C#OOP01\\GNET38-C#OOP01\\Ticket.cs",
               "RelativeToolTip": "GNET38-C#OOP01\\Ticket.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-15T08:54:25.664Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "tickettype.cs",
               "DocumentMoniker": "D:\\M_Fikery\\Test\\GNET38-C#OOP01\\GNET38-C#OOP01\\tickettype.cs",
               "RelativeDocumentMoniker": "GNET38-C#OOP01\\tickettype.cs",
               "ToolTip": "D:\\M_Fikery\\Test\\GNET38-C#OOP01\\GNET38-C#OOP01\\tickettype.cs",
               "RelativeToolTip": "GNET38-C#OOP01\\tickettype.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-15T08:53:06.804Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\M_Fikery\\Test\\GNET38-C#OOP01\\GNET38-C#OOP01\\Program.cs",
               "RelativeDocumentMoniker": "GNET38-C#OOP01\\Program.cs",
               "ToolTip": "D:\\M_Fikery\\Test\\GNET38-C#OOP01\\GNET38-C#OOP01\\Program.cs",
               "RelativeToolTip": "GNET38-C#OOP01\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAOIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEsAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-15T08:32:09.64Z",
               "EditorCaption": ""

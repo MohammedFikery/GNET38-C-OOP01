@@ -9,56 +9,67 @@ namespace GNET38_C_OOP01
 {
     internal class Ticket
     {
-        public string? MovieName{ get; set; }
-        public TicketType Type { get; set; }
-        public SeatLocation Seat { get; set; }
+        private static int ticketCounter = 0;
 
-        private double Price;
-        public double GetPrice() => Price;
+        private string _movieName = "Unknown";
+        private TicketType _type = TicketType.Standard;
+        private SeatLocation _seat = new SeatLocation('A', 1);
+        private double _price = 50;
 
-        public Ticket(string movieName): this(movieName, TicketType.Standard, new SeatLocation('A', 1), 50) 
+        public int TicketId { get; } 
+
+        public Ticket()
         {
-
+            TicketId = ++ticketCounter; 
         }
-        public Ticket(string movieName, TicketType type, SeatLocation seat, double price)
+
+        public Ticket(string movieName) : this()
         {
-            if (string.IsNullOrWhiteSpace(movieName))
-                throw new ArgumentException("Movie name is required.", nameof(movieName));
+            MovieName = movieName;
+        }
 
-            if (price < 0)
-                throw new ArgumentOutOfRangeException(nameof(price), "Price cannot be negative.");
-
-            MovieName = movieName.Trim();
+        public Ticket(string movieName, TicketType type, SeatLocation seat, double price) : this()
+        {
+            MovieName = movieName;
             Type = type;
             Seat = seat;
             Price = price;
         }
-        public double CalcTotal(double taxPercent)
-        {
-            if (taxPercent < 0)
-                throw new ArgumentOutOfRangeException(nameof(taxPercent), "Tax percent cannot be negative.");
 
-            double taxValue = Price * (taxPercent / 100.0);
-            return Price + taxValue;
-        }
-
-        public void ApplyDiscount(ref double discountAmount)
+        public string MovieName
         {
-            if (discountAmount > 0 && discountAmount <= Price)
+            get => _movieName;
+            set
             {
-                Price -= discountAmount;
-                discountAmount = 0; // consumed
+                if (!string.IsNullOrWhiteSpace(value))
+                    _movieName = value.Trim();
             }
         }
 
-        public void PrintTicket()
+        public TicketType Type
         {
-            Console.WriteLine("===== Ticket Info =====");
-            Console.WriteLine($"Movie   : {MovieName}");
-            Console.WriteLine($"Type    : {Type}");
-            Console.WriteLine($"Seat    : {Seat}");
-            Console.WriteLine($"Price   : {Price:0.00}");
-            Console.WriteLine("=======================");
+            get => _type;
+            set => _type = value;
         }
+
+        public SeatLocation Seat
+        {
+            get => _seat;
+            set => _seat = value;
+        }
+
+        public double Price
+        {
+            get => _price;
+            set
+            {
+                if (value > 0)
+                    _price = value;
+            }
+        }
+
+        public double PriceAfterTax => Price * 1.14;
+
+        public static int GetTotalTicketsSold() => ticketCounter;
     }
-}
+    }

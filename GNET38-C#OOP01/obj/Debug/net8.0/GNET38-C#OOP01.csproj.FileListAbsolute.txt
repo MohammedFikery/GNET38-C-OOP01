@@ -12,3 +12,4 @@ D:\M_Fikery\Test\GNET38-C#OOP01\GNET38-C#OOP01\obj\Debug\net8.0\refint\GNET38-C#
 D:\M_Fikery\Test\GNET38-C#OOP01\GNET38-C#OOP01\obj\Debug\net8.0\GNET38-C#OOP01.pdb
 D:\M_Fikery\Test\GNET38-C#OOP01\GNET38-C#OOP01\obj\Debug\net8.0\GNET38-C#OOP01.genruntimeconfig.cache
 D:\M_Fikery\Test\GNET38-C#OOP01\GNET38-C#OOP01\obj\Debug\net8.0\ref\GNET38-C#OOP01.dll
+D:\M_Fikery\Test\GNET38-C#OOP01\GNET38-C#OOP01\obj\Debug\net8.0\GNET38-C#OOP01.sourcelink.json

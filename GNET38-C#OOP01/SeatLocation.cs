@@ -25,6 +25,6 @@ namespace GNET38_C_OOP01
             Number = number;
         }
 
-        public override string ToString() => $"{Row}{Number}";
+        public override string ToString() => $"{Row}-{Number}";
     }
 }

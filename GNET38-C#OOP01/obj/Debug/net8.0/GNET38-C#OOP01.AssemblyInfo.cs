@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GNET38-C#OOP01")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+492a369c8527d9b3eb9415507c0c37b720eea24e")]
 [assembly: System.Reflection.AssemblyProductAttribute("GNET38-C#OOP01")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GNET38-C#OOP01")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
